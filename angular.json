@@ -1,0 +1,137 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "eforms-app": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "inlineTemplate": true,
+          "inlineStyle": true,
+          "skipTests": true
+        },
+        "@schematics/angular:class": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
+        },
+        "@schematics/angular:module": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        }
+      },
+      "root": "",
+      "sourceRoot": "src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/eforms-app",
+            "index": "src/index.html",
+            "main": "src/main.ts",
+            "polyfills": "src/polyfills.ts",
+            "tsConfig": "tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "src/favicon.ico",
+              "src/assets"
+            ],
+            "styles": [
+              "src/styles.css",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/survey-angular/survey.css",
+              "node_modules/survey-creator/survey-creator.css",
+              "node_modules/jquery-ui/themes/base/theme.css",
+              "node_modules/jquery-ui/themes/base/datepicker.css",
+              "node_modules/nouislider/distribute/nouislider.css",
+              "node_modules/select2/dist/css/select2.css",
+              "node_modules/pretty-checkbox/dist/pretty-checkbox.css",
+              "node_modules/bootstrap-slider/dist/css/bootstrap-slider.css",
+              "node_modules/jquery-bar-rating/dist/themes/bars-pill.css",
+              "node_modules/jquery-bar-rating/dist/themes/css-stars.css",
+              "node_modules/jquery-bar-rating/dist/themes/fontawesome-stars.css",
+              "node_modules/jquery-bar-rating/dist/themes/bars-1to10.css",
+              "node_modules/jquery-bar-rating/dist/themes/bars-horizontal.css",
+              "node_modules/jquery-bar-rating/dist/themes/bars-movie.css",
+              "node_modules/jquery-bar-rating/dist/themes/bars-reversed.css",
+              "node_modules/jquery-bar-rating/dist/themes/bars-square.css",
+              "node_modules/jquery-bar-rating/dist/themes/bootstrap-stars.css",
+              "node_modules/jquery-bar-rating/dist/themes/fontawesome-stars-o.css",
+              "node_modules/intl-tel-input/build/css/intlTelInput.css"
+            ],
+            "scripts": [
+              "node_modules/jquery/dist/jquery.js",
+              "node_modules/jquery-ui/ui/widgets/datepicker.js",
+              "node_modules/select2/dist/js/select2.js",
+              "node_modules/jquery-bar-rating/dist/jquery.barrating.min.js",
+              "node_modules/ckeditor/ckeditor.js",
+              "node_modules/emotion-ratings/dist/emotion-ratings.js",
+              "node_modules/intl-tel-input/build/js/intlTelInput.min.js"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "src/environments/environment.ts",
+                  "with": "src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "eforms-app:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "eforms-app:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "eforms-app:build"
+          }
+        }
+      }
+    }},
+  "defaultProject": "eforms-app"
+}

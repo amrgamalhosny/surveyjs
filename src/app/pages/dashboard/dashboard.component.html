@@ -1,0 +1,25 @@
+<a routerLink="/dashboard" class="btn btn-danger "> Dashboard </a> &nbsp;
+<a routerLink="/my-forms" class="btn btn-danger "> My Forms </a> &nbsp;
+<a routerLink="/m-requets" class="btn btn-danger "> My Requets </a> &nbsp;
+
+<h3 class="first">Basic</h3>
+<div class="p-grid" style="width:250px;margin-bottom:10px">
+    <div class="p-col-12"><p-checkbox name="group1" value="New York" label="New York" [(ngModel)]="selectedCities" inputId="ny"></p-checkbox></div>
+    <div class="p-col-12"><p-checkbox name="group1" value="San Francisco" label="San Francisco" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox></div>
+    <div class="p-col-12"><p-checkbox name="group1" value="Los Angeles" label="Los Angeles" [(ngModel)]="selectedCities" inputId="la"></p-checkbox></div>
+</div>
+
+Selected Cities: <span *ngFor="let city of selectedCities" style="margin-right:10px">{{city}}</span>
+
+<h3>Preselection</h3>
+<div class="p-grid" style="width:250px;margin-bottom:10px">
+    <div class="p-col-12"><p-checkbox name="group2" value="Technology" label="Technology" [(ngModel)]="selectedCategories" inputId="technology"></p-checkbox></div>
+    <div class="p-col-12"><p-checkbox name="group2" value="Finance" label="Finance" [(ngModel)]="selectedCategories" inputId="finance"></p-checkbox></div>
+    <div class="p-col-12"><p-checkbox name="group2" value="Sports" label="Sports" [(ngModel)]="selectedCategories" inputId="sports"></p-checkbox></div>
+    <div class="p-col-12"><p-checkbox name="group2" value="Entertainment" label="Entertainment" [(ngModel)]="selectedCategories" inputId="entertainment"></p-checkbox></div>
+</div>
+
+Selected Categories: <span *ngFor="let cat of selectedCategories" style="margin-right:10px">{{cat}}</span>
+
+<h3>Boolean - {{checked}}</h3>
+<p-checkbox [(ngModel)]="checked" binary="true"></p-checkbox>
