@@ -26,7 +26,7 @@
     "intl-tel-input": "^17.0.3",
     "jquery": "^3.5.1",
     "jquery-bar-rating": "^1.2.2",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui": "^1.13.2",
     "jsencrypt": "^3.0.0-rc.1",
     "ngx-cookie-service": "^3.0.4",
     "nouislider": "^14.5.0",
